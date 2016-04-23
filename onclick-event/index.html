@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  
+  </style>
+</head>
+<body>
+  <div id="test1">
+    <p>测试1</p>
+    <p>测试2</p>
+  </div>
+  
+  <div id="test2">
+    <table id="tb">
+      <tbody>
+        <tr><td>第1行</td><td>第1行</td></tr>
+        <tr><td>第2行</td><td>第2行</td></tr>
+        <tr><td>第3行</td><td>第3行</td></tr>
+        <tr><td>第4行</td><td>第4行</td></tr>
+        <tr><td>第5行</td><td>第5行</td></tr>
+        <tr><td>第6行</td><td>第6行</td></tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="test3">
+    <input type="checkbox" value="1" name="check" checked>
+    <input type="checkbox" value="1" name="check">
+    <input type="checkbox" value="1" name="check" checked>
+    <input type="button" value="你选中的个数" id="btn">
+  </div>
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    // implement by js
+    // // test1
+    // var items = document.getElementsByTagName('p');
+    // for (var i = 0; i < items.length; i++) {
+    //   items[i].addEventListener('click', function() {
+    //     alert(this.innerHTML + 'clicked');
+    //   });
+    // }
+    // 
+    // // test2
+    // var tb = document.getElementById("tb");
+    // var tbody = tb.getElementsByTagName("tbody")[0];
+    // var trs = tbody.getElementsByTagName('tr');
+    // for (var i = 0; i < trs.length; i++) {
+    //   if (i % 2 === 0) {
+    //     trs[i].style.backgroundColor = "#888";
+    //   }
+    // }
+    // 
+    // // test3
+    // var btn = document.getElementById("btn");
+    // btn.onclick = function() {
+    //   var array = [];
+    //   var items = document.getElementsByName("check");
+    //   
+    //   for (var i = 0; i < items.length; i++) {
+    //     if (items[i].checked) {
+    //       array.push(items[i].value);
+    //     }
+    //   }
+    //   
+    //   alert("选中的个数为： " + array.length);
+    // };
+    
+    // implement by jquery
+    // test1
+    $('p').click(function() {
+      alert(this.innerHTML + " clicked.");
+    })
+    
+    // test2
+    $('#tb tbody tr:odd').css('background-color', '#888');
+    
+    // test3
+    $('#btn').click(function() {
+      alert("选中的个数为 " + $('input[name]:checked').length);
+    });    
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
