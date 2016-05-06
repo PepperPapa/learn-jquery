@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #content {
+      border: 1px solid blue;
+    }
+    span {
+      display: block;
+      border: 1px dashed red;
+      background-color: #ddd;
+    }
+    #msg, #msg1 {
+      padding: 5px;
+      font-size: 0.8em;
+      font-style: italic;
+      background-color: #eee;
+    }
+  </style>
+  <title>bubble</title>
+</head>
+<body>
+  <!-- 阻止冒泡 -->
+  <div id="content">
+    外层div元素
+    <span>内层span元素</span>
+    外层div元素
+  </div>
+  <div id="msg"></div>
+
+  <!-- 阻止默认事件 -->
+  <form action="test.html">
+    <label>
+      用户名：<input type="text" id="username">
+      <input type="submit" value="提交" id="sub">
+    </label>
+  </form>
+  <div id="msg1"></div>
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    // 组织冒泡事件
+    $(function() {
+      // span元素绑定click事件
+      $('span').bind('click', function(event) {
+        var msg = $("#msg").html() + "<p>内层span元素被单击.</p>"
+        $("#msg").html(msg);
+        event.stopPropagation();
+      });
+      // #content元素click事件
+      $("#content").bind('click', function() {
+        var msg = $("#msg").html() + "<p>外层div元素被单击.</p>"
+        $("#msg").html(msg);
+        event.stopPropagation();
+      })
+      // body元素click事件
+      $("body").bind('click', function() {
+        var msg = $("#msg").html() + "<p>body元素被单击.</p>"
+        $("#msg").html(msg);
+      })
+
+      // 阻止默认事件
+      $("#sub").click(function(event) {
+        console.log(event.target,
+                    event.relatedTarget,
+                    event.pageX,
+                    event.pageY,
+                    event.which);
+        var user_name = $("#username").val();
+        if (user_name == "") {
+          $("#msg1").html("<p>文本框的值不能为空.</p>");
+          event.preventDefault();  // 本语句可以使用return false;来替代
+          // return false;
+        }
+      })
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>remove event</title>
+  <style>
+    #test {
+      font-style: italic;
+      font-size: 12px;
+      padding: 5px;
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">单击我</button>
+  <button id="delAll">删除所有事件</button>
+  <div id="test"></div>
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    $(function() {
+      $("#btn").bind("click", function() {
+        $("#test").append("<p>click事件</p>");
+      }).bind("myClick", function(event, msg1, msg2) {
+        $("#test").append("<p>"+ msg1 + msg2 + "</p>");
+      }).bind("click.plugin", function() {
+        $("#test").append("<p>click.plugin事件</p>");
+      });
+
+      $("#delAll").click(function() {
+        $("#btn").unbind();
+      });
+
+      $("#btn").click(function() {
+
+      });
+      $("#btn").trigger("myClick", ["我的自定义", "事件"]);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>show and hide</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    #test {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      background-color: #eee;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="test">你好</div>
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    $(function() {
+      $("body").click(function() {
+        console.log("test");
+        if ($("#test").is(":visible")) {
+          $("#test").hide(5000);
+        } else {
+          $("#test").show(5000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
