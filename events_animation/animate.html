@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #panel {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      border: 2px solid gray;
+      background-color: orange;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  </style>
+  <title>animate</title>
+</head>
+<body>
+  <!-- 点击后横向飘动 -->
+  <div id="panel"></div>
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    $(function() {
+      $("#panel").hover(function() {
+        $(this).stop(true)    // 光标移出#panel元素，直接跳过后面的动画队列
+               .animate({left: "500px", height: "200px", opacity: "1.0"}, 3000)
+               .animate({top: "200px", width: "200px"}, 3000, function() {
+                 $(this).css("border", "5px solid blue");
+               });
+      }, function() {
+        $(this).stop(true)
+               .animate({height: "22px", width: "60px"}, 300);
+      });
+    });
+  </script>
+</body>
+</html>
