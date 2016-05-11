@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+
+  </style>
+  <title>checkbox</title>
+</head>
+<body>
+  <form action="#">
+    <label for="">你爱好的运动是？<br>
+      <input type="checkbox" name="items" value="足球">足球</input>
+      <input type="checkbox" name="items" value="篮球">篮球</input>
+      <input type="checkbox" name="items" value="羽毛球">羽毛球</input>
+      <input type="checkbox" name="items" value="乒乓球">乒乓球</input>
+      <br>
+      <input type="button" id="checked-all" value="全 选">
+      <input type="button" id="checked-no" value="全不选">
+      <input type="button" id="checked-rev" value="反 选">
+      <input type="button" id="send" value="提 交">
+    </label>
+  </form>
+
+  <form action="#">
+    <label for="">你爱好的运动是？<br>
+      <input type="checkbox" id="checked-all-01">全选/全不选<br>
+      <input type="checkbox" name="items1" value="足球">足球</input>
+      <input type="checkbox" name="items1" value="篮球">篮球</input>
+      <input type="checkbox" name="items1" value="羽毛球">羽毛球</input>
+      <input type="checkbox" name="items1" value="乒乓球">乒乓球</input>
+      <br>
+      <input type="button" id="send" value="提 交">
+    </label>
+  </form>
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    // case 1
+    $(function() {
+      $("#checked-all").click(function() {
+        $("[name=items]:checkbox").prop("checked", true);
+      });
+      $("#checked-no").click(function() {
+        $("[name=items]:checkbox").prop("checked", false);
+      });
+      $("#checked-rev").click(function() {
+        $("[name=items]:checkbox").each(function() {
+          this.checked = !this.checked;
+        });
+      });
+      $("#send").click(function() {
+        str = '你选中的是:\r\n'
+        $("[name=items]:checkbox:checked").each(function() {
+          str += $(this).val() + "\r\n";
+        });
+        alert(str);
+      });
+
+      // case 2
+      $("#checked-all-01").click(function() {
+        var self = this;
+        $("[name=items1]:checkbox").each(function() {
+          this.checked = self.checked
+        });
+      });
+
+      $("[name=items1]:checkbox").click(function() {
+        var flag = true;
+        $("[name=items1]:checkbox").each(function() {
+          if (!this.checked) {
+            flag = false;
+          }
+        });
+        $("#checked-all-01").prop("checked", flag);
+      });
+    });
+  </script>
+</body>
+</html>

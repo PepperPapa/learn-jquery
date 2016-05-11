@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>table</title>
+  <style>
+    .bigger, .smaller {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      font-weight: bold;
+      border: 2px solid #880;
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="msg">
+    <div class="msg_caption">
+      <span class="bigger">+</span>
+      <span class="smaller">-</span>
+    </div>
+    <div>
+      <p id="para">this is some text.this is some text.this is some text.
+this is some text.this is some text.this is some text.this is some text.
+this is some text.this is some text.this is some text.this is some text.
+this is some text.this is some text.this is some text.this is some text.
+      </p>
+    </div>
+  </div>
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    $(function() {
+      $("span").click(function() {
+        var thisElement = $("#para").css("font-size");
+        var fontSize = parseInt(thisElement);  // 获取font-size值 如16
+        var unit = thisElement.slice(-2); // 获取font-size单位，如px
+        var className = $(this).attr("class");
+        if (className == "bigger") {
+          fontSize += 2;
+        } else if (className == "smaller") {
+          fontSize -= 2;
+        }
+        $("#para").css("font-size", fontSize + unit);
+      });
+    });
+  </script>
+</body>
+</html>

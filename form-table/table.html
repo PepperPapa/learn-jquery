@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>table</title>
+  <style>
+    table {
+      border: 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    th {
+      border-bottom: 1px solid #000;
+      width: 80px;
+    }
+    .even {background: #fff38f;}
+    .odd {background: #ffe;}
+    .selected {background: #848484;}
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>暂住地</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="radio" name="select"></td>
+        <td>test1</td>
+        <td>test2</td>
+        <td>test3</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="select"></td>
+        <td>test1</td>
+        <td>test2</td>
+        <td>go</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="select"></td>
+        <td>test1</td>
+        <td>test2</td>
+        <td>test3</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="select"></td>
+        <td>test1</td>
+        <td>test2</td>
+        <td>test3</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="select"></td>
+        <td>test1</td>
+        <td>test2</td>
+        <td>test3</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="select"></td>
+        <td>test1</td>
+        <td>test2</td>
+        <td>test3</td>
+      </tr>
+    </tbody>
+  </table>
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    $(function() {
+      $("tbody>tr:odd").addClass("odd");
+      $("tbody>tr:even").addClass("even");
+      $("tbody>tr").click(function() {
+        $(this).addClass("selected")
+               .siblings().removeClass("selected")
+               .end()   // end()这里所起的作用重新返回$(this)对象
+               .find(":radio").prop("checked", true);
+      });
+    });
+  </script>
+</body>
+</html>

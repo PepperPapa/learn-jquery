@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    div {
+      margin: 5px;
+    }
+    input, textarea {
+      outline: none;
+    }
+    .focus {
+      border: 1px solid #f00;
+      background-color: #fcc;
+    }
+  </style>
+  <title>animate</title>
+</head>
+<body>
+  <form action="#" id="regForm" method="POST">
+    <fieldset>
+      <legend>个人基本信息</legend>
+      <div>
+        <label for="username">名称:</label>
+        <input type="text" id="username">
+      </div>
+      <div>
+        <label for="pass">密码:</label>
+        <input type="text" id="pass">
+      </div>
+      <div>
+        <label for="msg">详细信息:</label>
+        <textarea id="msg"></textarea>
+      </div>
+    </fieldset>
+  </form>
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    $(function() {
+      $(":input").focus(function() {
+        $(this).addClass("focus");
+      }).blur(function() {
+        $(this).removeClass("focus");
+      })
+    });
+  </script>
+</body>
+</html>

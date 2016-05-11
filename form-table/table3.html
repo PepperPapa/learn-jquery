@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>table</title>
+  <style>
+    table {
+      margin-top: 20px;
+      border: 0;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th {
+      border-bottom: 1px solid #000;
+      width: 80px;
+    }
+    .selected {background: orange;}
+  </style>
+</head>
+<body>
+  <label for="filter">过滤</label>
+  <input type="text" name="filter" id="filter">
+  <table>
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>暂住地</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="parent" id="row-01">
+        <td colspan="3">前台设计组</td>
+      </tr>
+      <tr class="child-row-01">
+        <td>test1</td>
+        <td>test2</td>
+        <td>test3</td>
+      </tr>
+      <tr class="child-row-01">
+        <td>test1</td>
+        <td>test2</td>
+        <td>test3</td>
+      </tr>
+      <tr class="parent" id="row-02">
+        <td colspan="3">前台开发组</td>
+      </tr>
+      <tr class="child-row-02">
+        <td>test1</td>
+        <td>test2</td>
+        <td>test3</td>
+      </tr>
+      <tr class="child-row-02">
+        <td>test1</td>
+        <td>go</td>
+        <td>test3</td>
+      </tr>
+      <tr class="parent" id="row-03">
+        <td colspan="3">后台设计组</td>
+      </tr>
+      <tr class="child-row-03">
+        <td>test1</td>
+        <td>test2</td>
+        <td>test3</td>
+      </tr>
+      <tr class="child-row-03">
+        <td>test1</td>
+        <td>test2</td>
+        <td>go</td>
+      </tr>
+    </tbody>
+  </table>
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    $(function() {
+      $("tr.parent").click(function() {
+        console.log("go");
+        $(this).toggleClass("selected")   // 添加or删除背景高亮
+               .siblings('.child-' + this.id).toggle();  //隐藏or显示子行
+      }).click();  // 触发click事件
+
+      // 内容筛选
+      $("#filter").keyup(function() {
+        $("table tbody tr").hide()
+            .filter(":contains('" + $(this).val() + "')").show();
+      });
+    });
+  </script>
+</body>
+</html>
