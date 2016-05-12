@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>cookie</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  用户名：<input id="username" name="username"></input><br>
+  <input type="checkbox" id="check" name="check">记住用户名
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="jquery.cookie.js"></script>
+  <script>
+    $(function() {
+      var cookie_name = "username";
+      if ($.cookie(cookie_name)) {
+        $("#username").val($.cookie(cookie_name));
+      }
+      $("#check").click(function() {
+        if (this.checked) {
+          $.cookie(cookie_name, $("#username").val());
+        } else {
+          $.cookie(cookie_name, null);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

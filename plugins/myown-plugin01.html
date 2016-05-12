@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>myown plugin01</title>
+</head>
+<body>
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="jquery.alterbgcolor.js"></script>
+  <script>
+    $(function() {
+      $("#red").color("red");
+      $("#blue").color("blue");
+      $("p").html("id为blue的文字的颜色为： "+ $("#blue").color());
+    });
+  </script>
+</body>
+</html>
