@@ -28,7 +28,24 @@
   <script src="jquery.cookie.js"></script>
   <script>
     $(function(){
-      var $li
+      var $li = $("#skin li");
+      $li.click(function() {
+        $("#" + this.id).addClass("selected")
+                .siblings().removeClass("selected");
+        $("#cssfile").attr("href", "css/" + this.id + ".css");
+        $.cookie("MyCssSkin", this.id, {path: "/", expires: 10}); // 计入cookie
+        console.log("go");
+      });
+
+      // TODO: zx cookie功能还不工作
+      // 读取cookie
+      var cookie_skin = $.cookie("MyCssSkin");
+      if (cookie_skin) {
+        $("#" + cookie_skin).addClass("selected")
+                  .siblings().removeClass("selected");
+        $("#cssfile").attr("href", "css/" + cookie_skin + ".css");
+        $.cookie("MyCssSkin", cookie_skin, {path: "/", expires: 10});
+      }
     });
   </script>
 </body>
