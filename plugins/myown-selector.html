@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>table</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div style="background: red">0</div>
+  <div style="background: blue">1</div>
+  <div style="background: green">2</div>
+  <div style="background: yellow">3</div>
+  <div style="background: gray">4</div>
+  <div style="background: orange">5</div>
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    // 插件编写
+    // ;-为了避免其他插件导致的问题，主动在前面增加分号
+    // TODO: zx 此插件不工作，1.7.0版本可工作，后续版本有更新，待处理
+    ;(function($) {
+      $.extend(jQuery.expr[":"], {
+        between: function(a, i, m) {
+          var tmp = m[3].split(",");
+          // tmp[0] - 0会将字符串转为数字
+          return tmp[0]-0<i&&i<tmp[1]-0;
+        }
+      });
+    })(jQuery);
+
+    // 插件应用
+    $(function() {
+      alert("执行前");
+      $("div:between(2,5)").css("background", "white");
+      alert("执行后");
+    });
+  </script>
+</body>
+</html>
