@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test a simple simulate jquery lib</title>
+  </head>
+  <body>
+    <div style="margin:10px 10px;">
+      <span id='result'>
+        点击看效果
+      </span>
+    </div>
+    <div id='tst'>div文本值</div>
+    <script src="simple-jQuery.js"></script>
+    <script>
+      alert($.html(document.getElementById('result'))); //点击看效果
+      alert($('span').html()); //点击看效果
+      alert($('#tst').html()); //div文本值
+    </script>
+  </body>
+</html>
