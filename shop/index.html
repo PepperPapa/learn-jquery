@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/skin/skin_0.css" id="cssfile">
   <title>Jane Shopping</title>
 </head>
 <body>
-  <header>
+  <header id="header">
     <div class="contWidth">
       <a href="#nogo" class="logo">
         <img src="images/logo.gif" alt="Jane Shop">
       </a>
       <div class="search">
-        <input type="text" id="input-search" placeholder="输入商品名称">
+        <input type="text" id="inputSearch" placeholder="输入商品名称">
       </div>
       <ul id="skin">
         <li id="skin_0" class="selected">skin_0</li>
@@ -88,7 +89,7 @@
       </div>
     </div>
   </header>
-  <main>
+  <main id="content">
     <div class="janeshop">
       <div id="jnCatalog">
         <h2 title="商品分类">商品分类</h2>
@@ -145,13 +146,126 @@
           </ul>
         </div>
       </div>
-      <div id="jnImageroll"></div>
-      <div id="jnNotice"></div>
-      <div id="jnBrand"></div>
+      <!-- 大屏广告 start -->
+      <div id="jnImageroll">
+        <a href="#" id="JS_imgWrap">
+          <img src="images/ads/1.jpg" alt="相约情人节1">
+          <img src="images/ads/2.jpg" alt="相约情人节2">
+          <img src="images/ads/3.jpg" alt="相约情人节3">
+          <img src="images/ads/4.jpg" alt="相约情人节4">
+          <img src="images/ads/5.jpg" alt="相约情人节5">
+        </a>
+        <div>
+          <a href=""><em>相约情人节</em><em>全场119元起</em></a>
+          <a href=""><em>新款上线</em><em>全场357元起</em></a>
+          <a href=""><em>愤怒小鸟特卖</em><em>全场89元</em></a>
+          <a href=""><em>男鞋促销第一</em><em>全场3.1折起</em></a>
+          <a class="last" href=""><em>春季新品发布</em><em>全场4.1折起</em></a>
+        </div>
+      </div>
+      <!-- 大屏广告 end -->
+      <!-- 最新动态 start -->
+      <div id="jnNotice">
+        <div id="jnMiaosha">
+          <a href="" class="JS_css3">
+            <img src="images/upload/20120220.png" alt="冬品清仓">
+          </a>
+        </div>
+        <div id="jnNoticeInfo">
+          <h2 title="最新动态">最新动态</h2>
+          <ul>
+              <li>
+                <a href="#" class="tooltip" title="[活动] 伊伴春鞋迎春大促">[活动] 伊伴春鞋迎春大促</a>
+              </li>
+              <li>
+                <a href="#" class="tooltip" title="[活动] 千百度冬靴新品火热让利">[活动] 千百度冬靴新品火热让利</a>
+              </li>
+              <li>
+                <a href="#" class="tooltip" title="[活动] COEY秋冬新品全场2.3折起">[活动] COEY秋冬新品全场2.3折起</a>
+              </li>
+              <li>
+                <a href="#" class="tooltip" title="[活动] 伊伴春鞋迎春大促">[活动] 伊伴春鞋迎春大促</a>
+              </li>
+              <li>
+                <a href="#" class="tooltip" title="[活动] 千百度冬靴新品火热让利">[活动] 千百度冬靴新品火热让利</a>
+              </li>
+            <br class="clear">
+          </ul>
+        </div>
+      </div>
+      <!-- 最新动态 end -->
+      <div id="jnBrand">
+        <div id="jnBrandTab">
+          <h2 title="品牌活动">品牌活动</h2>
+          <ul>
+            <li class="chos"><a href="#" title="运动">运动</a></li>
+            <li><a href="#" title="女鞋">女鞋</a></li>
+            <li><a href="#" title="男鞋">男鞋</a></li>
+            <li><a href="#" title="童鞋">童鞋</a></li>
+          </ul>
+        </div>
+        <div id="jnBrandContent">
+          <div id="jnBrandList">
+            <ul>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120217.jpg" alt="耐克">耐克</a>
+                <span><a href="#">耐克</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120220.png" alt="阿迪达斯">阿迪达斯</a>
+                <span><a href="#">阿迪达斯</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120219.png" alt="李宁">李宁</a>
+                <span><a href="#">李宁</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120218.jpg" alt="安踏">安踏</a>
+                <span><a href="#">安踏</a></span>
+              </li>
+
+              <li><a href="#" class="JS_live"><img src="images/upload/20120217.jpg" alt="耐克">耐克</a>
+                <span><a href="#">耐克</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120220.png" alt="阿迪达斯">阿迪达斯</a>
+                <span><a href="#">阿迪达斯</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120219.png" alt="李宁">李宁</a>
+                <span><a href="#">李宁</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120218.jpg" alt="安踏">安踏</a>
+                <span><a href="#">安踏</a></span>
+              </li>
+
+              <li><a href="#" class="JS_live"><img src="images/upload/20120217.jpg" alt="耐克">耐克</a>
+                <span><a href="#">耐克</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120220.png" alt="阿迪达斯">阿迪达斯</a>
+                <span><a href="#">阿迪达斯</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120219.png" alt="李宁">李宁</a>
+                <span><a href="#">李宁</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120218.jpg" alt="安踏">安踏</a>
+                <span><a href="#">安踏</a></span>
+              </li>
+
+              <li><a href="#" class="JS_live"><img src="images/upload/20120217.jpg" alt="耐克">耐克</a>
+                <span><a href="#">耐克</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120220.png" alt="阿迪达斯">阿迪达斯</a>
+                <span><a href="#">阿迪达斯</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120219.png" alt="李宁">李宁</a>
+                <span><a href="#">李宁</a></span>
+              </li>
+              <li><a href="#" class="JS_live"><img src="images/upload/20120218.jpg" alt="安踏">安踏</a>
+                <span><a href="#">安踏</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
-  <footer>
-
+  <footer id="footer">
+    Copyright &copy; 2009 - 2012 JaneShop Inc.
   </footer>
 </body>
 </html>
