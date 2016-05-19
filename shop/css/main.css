@@ -10,10 +10,10 @@
     width: 990px;
     z-index: 100;
 }
-#header .logo { 
-	float:left; 
-	margin:0 0 0 10px; 
-	color:#FFF; 
+#header .logo {
+	float:left;
+	margin:0 0 0 10px;
+	color:#FFF;
 	line-height:80px;
 }
 #header .search {
@@ -30,25 +30,26 @@
     width: 200px;
 }
 #inputSearch.focus{
-    border: 1px solid #00A5FF;
+    border: 1px solid orange;
+		outline: none;
 }
 /* 切换皮肤控件样式 */
-#skin { 
-	float:right; 
-	margin:10px; 
-	padding:4px; 
-	width:120px; 
+#skin {
+	float:right;
+	margin:10px;
+	padding:4px;
+	width:120px;
 }
-#skin li { 
-	float:left; 
-	margin-right:4px; 
-	width:15px; 
-	height:15px; 
-	text-indent:-9999px; 
-	overflow:hidden; 
-	display:block; 
-	cursor:pointer; 
-	background-image:url("../images/theme.gif"); 
+#skin li {
+	float:left;
+	margin-right:4px;
+	width:15px;
+	height:15px;
+	text-indent:-9999px;
+	overflow:hidden;
+	display:block;
+	cursor:pointer;
+	background-image:url("../images/theme.gif");
 }
 #skin_0 { background-position:0px 0px; }
 #skin_1 { background-position:15px 0px; }
@@ -78,28 +79,28 @@
     float: left;
     margin-left: 25px;
 }
-.mainNav ul li { 
-	float:left; 
+.mainNav ul li {
+	float:left;
     display: inline;
 	margin-right:14px;
 	position: relative ;
 	z-index:100;
 }
-.mainNav ul li a { 
+.mainNav ul li a {
 	display:block;
-	padding:0 8px; 
+	padding:0 8px;
 	font-weight:700;
 	color:#fff;
 	font-size:14px;
 }
-.mainNav ul li a:hover { 
-	background:none; 
+.mainNav ul li a:hover {
+	background:none;
 }
 /* 二级菜单 */
 .jnNav {
     background:#FFFFFF;
     border: 1px solid #B1B1B1;
-	border-top:0;
+		border-top:0;
     left: 0;
     overflow: hidden;
     position: absolute;
@@ -440,7 +441,7 @@
 /* details.html */
 #jnProitem{
     float: left;
-    width: 312px; 
+    width: 312px;
 	height: 560px;
 	display:inline;
 }
@@ -462,52 +463,52 @@
 #jnProitem ul.imgList{
 	height: 80px;
 }
-#jnProitem ul.imgList li { 
+#jnProitem ul.imgList li {
 	float:left;
-	margin-right:10px;  
+	margin-right:10px;
 }
-#jnProitem ul.imgList li img { 
-	width:60px; 
-	height:60px; 
+#jnProitem ul.imgList li img {
+	width:60px;
+	height:60px;
 	padding:1px;
 	background:#EEE;
-	cursor:pointer; 
+	cursor:pointer;
 }
-#jnProitem ul.imgList li img:hover { 
-	padding:1px; 
-	background:#999; 
+#jnProitem ul.imgList li img:hover {
+	padding:1px;
+	background:#999;
 }
 
-.tab{ 
+.tab{
 	clear:both;
     float: left;
     height: 230px;
     overflow: hidden;
     width: 310px;
 }
-.tab .tab_menu { 
+.tab .tab_menu {
 	clear:both;
 }
-.tab .tab_menu li { 
-	float:left; 
-	text-align:center; 
-	cursor:pointer; 
-	list-style:none; 
-	padding:1px 6px; 
-	margin-right:4px; 
+.tab .tab_menu li {
+	float:left;
+	text-align:center;
+	cursor:pointer;
+	list-style:none;
+	padding:1px 6px;
+	margin-right:4px;
 	background:#F1F1F1;
-	border:1px solid #898989; 
+	border:1px solid #898989;
 	border-bottom:none;
 }
-.tab .tab_menu li.hover { 
+.tab .tab_menu li.hover {
 	background:#DFDFDF;
 }
-.tab .tab_menu li.selected { 
-	color:#FFF; 
+.tab .tab_menu li.selected {
+	color:#FFF;
 	background:#6D84B4;
 }
-.tab .tab_box { 
-	clear:both; 
+.tab .tab_box {
+	clear:both;
 	border:1px solid #898989;
 }
 .tab .hide{
@@ -543,30 +544,30 @@
     padding-right: 5px;
     vertical-align: middle;
 }
-#jnDetails .jnProDetailList .color_change li , #jnDetails .jnProDetailList .pro_size li{ 
-	float:left; 
-	margin-right:10px; 
+#jnDetails .jnProDetailList .color_change li , #jnDetails .jnProDetailList .pro_size li{
+	float:left;
+	margin-right:10px;
 	width:40px;
 }
-#jnDetails .jnProDetailList .color_change img { 
-	width:30px; 
-	height:30px; 
-	padding:1px; 
+#jnDetails .jnProDetailList .color_change img {
+	width:30px;
+	height:30px;
+	padding:1px;
 	background:#EEE;
 	border:1px solid #BBB;
-	cursor:pointer; 
+	cursor:pointer;
 }
-#jnDetails .jnProDetailList .color_change img:hover,#jnDetails .jnProDetailList .color_change img.hover { 
+#jnDetails .jnProDetailList .color_change img:hover,#jnDetails .jnProDetailList .color_change img.hover {
 	border:1px solid #f60;
 }
 #jnDetails .jnProDetailList .pro_size li{
-	display:block; 
+	display:block;
 	margin-right:6px;
 	border:1px solid #AAA;
-	cursor:pointer; 
-	width:30px; 
-	height:30px; 
-	line-height:30px; 
+	cursor:pointer;
+	width:30px;
+	height:30px;
+	line-height:30px;
 	overflow:hidden;
 	text-align:center;
 }
@@ -616,7 +617,7 @@ ul.rating li a:hover {
 	width:80px;
 	height:16px;
 	overflow:hidden;
-	left:0;	
+	left:0;
 	background: url(../images/star-matrix.gif) no-repeat 0 0
 }
 ul.rating li.one a:hover {background-position:0 -96px;}
@@ -645,15 +646,15 @@ ul.rating li.five a:hover {background-position:0 -160px}
 }
 /* imgHover */
 .imageMask{
-	background-color:#ffffff; 
+	background-color:#ffffff;
 	filter:alpha(opacity=0);
-	opacity: 0;	
+	opacity: 0;
 	cursor: pointer;
 }
 .imageOver{
-	background:url(../images/zoom.gif) no-repeat 50% 50%;	
+	background:url(../images/zoom.gif) no-repeat 50% 50%;
 	filter:alpha(opacity=60);
-	opacity: 0.6;	
+	opacity: 0.6;
 }
 
 /* jquery zoom */
