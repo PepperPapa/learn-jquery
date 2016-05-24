@@ -646,8 +646,8 @@ ul.rating li.five a:hover {background-position:0 -160px}
 }
 /* imgHover */
 .imageMask{
-	background-color:#ffffff;
-	filter:alpha(opacity=0);
+	background-color: #ffffff;
+	filter: alpha(opacity=0);
 	opacity: 0;
 	cursor: pointer;
 }
